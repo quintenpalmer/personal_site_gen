@@ -25,7 +25,61 @@ fn main() {
             vec![elements::Meta::style_less(Some(attributes::Charset {
                 value: units::CharsetValue::Utf8,
             }))],
-            vec![],
+            vec![elements::Style {
+                style_sheet: style_sheet::StyleSheet {
+                    assignments: vec![
+                        style_sheet::StyleAssignment {
+                            names: vec!["#main-content".into()],
+                            styles: vec![
+                                &styles::Margin::TopRightBottonLeft(
+                                    units::NumberOrAuto::Number(units::Number::Length(0, units::Length::Pixel)),
+                                    units::NumberOrAuto::Auto,
+                                    units::NumberOrAuto::Number(units::Number::Length(0, units::Length::Pixel)),
+                                    units::NumberOrAuto::Auto,
+                                ),
+                                &styles::Padding::TopRightBottonLeft(
+                                    units::Number::Length(2, units::Length::Pixel),
+                                    units::Number::Length(15, units::Length::Pixel),
+                                    units::Number::Length(2, units::Length::Pixel),
+                                    units::Number::Length(15, units::Length::Pixel),
+                                ),
+                                &styles::Width {
+                                    value: units::NumberOrAuto::Number(units::Number::Length(
+                                        800,
+                                        units::Length::Pixel,
+                                    )),
+                                },
+                                &styles::Height {
+                                    value: units::NumberOrAuto::Number(units::Number::Percentage(
+                                        100,
+                                    )),
+                                },
+                                &styles::BackgroundColor {
+                                    color_value: "#333333",
+                                },
+                            ],
+                        },
+                        style_sheet::StyleAssignment {
+                            names: vec!["body".into()],
+                            styles: vec![
+                                &styles::Margin::TopRightBottonLeft(
+                                    units::NumberOrAuto::Number(units::Number::Length(0, units::Length::Pixel)),
+                                    units::NumberOrAuto::Auto,
+                                    units::NumberOrAuto::Number(units::Number::Length(0, units::Length::Pixel)),
+                                    units::NumberOrAuto::Auto,
+                                ),
+                                &styles::BackgroundColor {
+                                    color_value: "#222222",
+                                },
+                                &styles::Color  {
+                                    color_value: "#ccddcc",
+                                },
+                                &styles::FontFamily { name: "sans-serif" },
+                            ],
+                        },
+                    ],
+                },
+            }],
         )),
         Some(elements::Body::style_less(vec![elements::Div {
             id: None,
