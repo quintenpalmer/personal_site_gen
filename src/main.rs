@@ -5,6 +5,20 @@ use htmldsl::styles;
 use htmldsl::units;
 use htmldsl::TagRenderableIntoElement;
 
+fn link<'a>(url: &'static str, display_text: &'static str) -> elements::A<'a> {
+    elements::A {
+        href: attributes::Href {
+            value: units::SourceValue::new(url.into()),
+        },
+        children: vec![htmldsl::text(display_text.into())],
+        styles: attributes::StyleAttr {
+            values: vec![&styles::Color {
+                color_value: "#70a0ff",
+            }],
+        },
+    }
+}
+
 fn main() {
     let html = elements::Html::style_less(
         Some(elements::Head::new(
