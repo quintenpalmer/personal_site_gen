@@ -25,6 +25,9 @@ cargo run > ~/storage/projects/quintenpalmer.github.io/index.html
 
 ```
 cd ~/storage/projects/quintenpalmer.github.io
+nvim index.html
+:%s/\s\+$//g
+:x
 git add -p
 git commit
 git push
