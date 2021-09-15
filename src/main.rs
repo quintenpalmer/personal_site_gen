@@ -11,11 +11,7 @@ fn link<'a>(url: &'static str, display_text: &'static str) -> elements::A<'a> {
             value: units::SourceValue::new(url.into()),
         },
         children: vec![htmldsl::text(display_text)],
-        styles: attributes::StyleAttr {
-            values: vec![&styles::Color {
-                color_value: "#70a0ff",
-            }],
-        },
+        styles: attributes::StyleAttr { values: vec![] },
     }
 }
 
@@ -77,6 +73,16 @@ fn main() {
                                 &styles::FontFamily { name: "sans-serif" },
                             ],
                         },
+
+                        style_sheet::StyleAssignment {
+                            names: vec!["a".into()],
+                            styles: vec![
+                                &styles::Color  {
+                                    color_value: "#70a0ff",
+                                },
+                            ],
+                        },
+
                     ],
                 },
             }],
